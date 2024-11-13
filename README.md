@@ -1,4 +1,4 @@
-# 🚀 Coding Club
+# 🚀 [Coding Club](https://universityofathens.github.io/CodingClub)
 
 Καλώς ήρθες στο Coding Club - μια δυναμική κοινότητα φοιτητών που μοιράζονται το πάθος τους για την τεχνολογία και τον προγραμματισμό!
 
