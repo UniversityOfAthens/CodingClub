@@ -37,7 +37,7 @@
 
 ## 📬 Επικοινωνία
 
-- ΤΒΑ
+- ✉️ Email: codingclub@di.uoa.gr
 
 ---
 
