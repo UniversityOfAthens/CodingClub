@@ -107,7 +107,7 @@ body {
 
 .slider-container {
     position: relative;
-    width: 95%;
+    width: 75%;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -199,6 +199,30 @@ body {
     font-size: 1.3rem;
     margin-bottom: 15px;
     text-align: center;
+}
+
+.team-members {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.member {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.icon svg {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 
 .dots-container {

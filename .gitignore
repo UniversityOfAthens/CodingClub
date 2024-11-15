@@ -1,0 +1,5 @@
+# Ignore testing files
+
+node_modules/
+server.js
+package*
