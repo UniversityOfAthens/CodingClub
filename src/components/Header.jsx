@@ -24,7 +24,6 @@ const Header = () => {
   };
 
   const menuItems = [
-    { text: "Home", path: "/" },
     { text: "Meetings", path: "/meetings" },
     { text: "Game Development", path: "/gamedev" },
     { text: "Ethical Hacking", path: "/ethicalhacking" },
