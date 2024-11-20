@@ -40,7 +40,7 @@ export default function Home()
                 color: "secondary.main",
                 fontWeight: "bold",
             }}>
-            200+ ΜΕΛΟΙ
+            200+ ΜΕΛΗ
         </Typography>
         <Button variant="contained" color="secondary" href="https://discord.gg/c34X34X6Jb" target="_blank" sx={{width: {md: "15%", xs: "70%"}, height: "3.5rem", alignSelf: "center", fontSize: "2em", marginY: "2rem",}}>
             ΜΠΕΣ
