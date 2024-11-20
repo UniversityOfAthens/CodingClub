@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "codingclub.di.uoa.gr",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
