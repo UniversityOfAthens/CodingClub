@@ -12,7 +12,7 @@ const Footer = () => {
         }}
     >
       <Typography variant="body2">
-        &copy; {new Date().getFullYear()} My Website. All rights reserved.
+        &copy; {new Date().getFullYear()} Dit Coding Club
       </Typography>
     </Box>
   );

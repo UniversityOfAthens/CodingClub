@@ -13,6 +13,7 @@ import "./main.css"
 import Hackathons from './pages/Hackathons';
 import CompetitiveProgramming from './pages/CompetitiveProgramming';
 import OpenSource from './pages/OpenSource';
+import Meetings from './pages/Meetings';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
@@ -21,11 +22,15 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
-    errorElement: <ErrorPage />,
+    errorElement: <Layout><ErrorPage /></Layout>,
     children: [
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/meetings",
+        element: <Meetings/>
       },
       {
         path: "/gamedev",
@@ -40,11 +45,11 @@ const router = createBrowserRouter([
         element: <Hackathons/>
       },
       {
-        path: "competitiveprogramming",
+        path: "/competitiveprogramming",
         element: <CompetitiveProgramming/>
       },
       {
-        path: "opensource",
+        path: "/opensource",
         element: <OpenSource/>
       }
     ],

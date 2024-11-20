@@ -14,11 +14,12 @@ const Header = () => {
   };
 
   const menuItems = [
+    {text: "Meetings", path: "/meetings"},
     { text: 'Game Development', path: '/gamedev' },
     { text: 'Ethical Hacking', path: '/ethicalhacking' },
     { text: 'Hackathons', path: '/hackathons' },
     { text: 'Competitive Programming', path: '/competitiveprogramming' },
-    { text: 'Open Source', path: '/opensource' },
+    { text: 'Open Source', path: '/opensource' }
   ];
 
   return (
