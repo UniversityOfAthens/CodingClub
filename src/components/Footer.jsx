@@ -8,6 +8,7 @@ const Footer = () => {
             backgroundColor: 'primary.main',
             textAlign: 'center',
             py: 2,
+            marginTop: "5rem"
         }}
     >
       <Typography variant="body2">
