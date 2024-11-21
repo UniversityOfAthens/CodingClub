@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 export default function Meetings()
 {
     return <Box sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-        <Typography variant="h1" component={"h1"} textAlign={"center"}  sx={{ fontSize: '3rem',marginTop: "5vh" }}>
+        <Typography variant="h1" component={"h1"} textAlign={"center"}  sx={{ fontSize: '4em',marginTop: "5vh" }}>
             Meetings
         </Typography>
         <Typography variant="h2" component={"h2"} textAlign={"center"}  sx={{ fontSize: '3rem',marginTop: "5vh" }}>
@@ -24,7 +24,7 @@ export default function Meetings()
         <Typography>
             Κάθε Παρασκευή 17:00 - 19:00 στην αίθουσα ΣΤ
         </Typography>
-        <Typography variant="h1" component={"h1"} textAlign={"center"}  sx={{ fontSize: '3rem',marginTop: "5vh" }}>
+        <Typography variant="h1" component={"h1"} textAlign={"center"}  sx={{ fontSize: '4em',marginTop: "5vh" }}>
             Χάρτης Σχολής
         </Typography>
         <Box
