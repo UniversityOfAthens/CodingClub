@@ -44,7 +44,7 @@ export default function Home() {
           fontWeight: "bold",
         }}
       >
-        200+ ΜΕΛΗ
+        200+ Μέλη
       </Typography>
       <Button
         variant="contained"
@@ -61,8 +61,8 @@ export default function Home() {
       >
         {" "}
         <BsDiscord />
-        <Typography sx={{ fontSize: "25px", paddingLeft: "20px" }}>
-          ΜΠΕΣ
+        <Typography sx={{ fontSize: "25px", paddingLeft: "10px", fontWeight:"bold", textTransform: "none" }}>
+          Μπες
         </Typography>
       </Button>
       <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
@@ -114,7 +114,7 @@ export default function Home() {
       />
       <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
       <Typography variant="h2" component={"h2"}>
-        Ενδιαφέρεσαι?
+        Ενδιαφέρεσαι;
       </Typography>
       <Button
         variant="contained"
@@ -126,9 +126,11 @@ export default function Home() {
           height: "3.5rem",
           alignSelf: "center",
           marginTop: "2rem",
+          textTransform: "none",
+          fontWeight: "bold",
         }}
       >
-        Μπές
+        Μπες στο Discord
       </Button>
       <Button
         component={Link}
@@ -140,6 +142,8 @@ export default function Home() {
           height: "3.5rem",
           alignSelf: "center",
           marginTop: "1rem",
+          textTransform: "none",
+          fontWeight: "bold",
         }}
       >
         Δες τα Meetings
