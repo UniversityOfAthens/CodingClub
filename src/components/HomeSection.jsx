@@ -29,8 +29,8 @@ export default function HomeSection({imageName, title, description, link, isReve
             <Button
                 component={Link}
                 to={link}
-                variant="outlined" color="secondary" sx={{width: {md: "35%", xs: "70%"}, height: "3.5rem", alignSelf: "center", fontSize: "2em", marginY: "2rem",}}>
-                ΔΕΣ
+                variant="outlined" color="secondary" sx={{width: {md: "35%", xs: "70%"}, height: "3.5rem", alignSelf: "center", fontSize: "16px", marginY: "2rem", textTransform:"none", fontWeight: "bold"}}>
+                Περισσότερα
             </Button>
         </Box>
     </Box>)

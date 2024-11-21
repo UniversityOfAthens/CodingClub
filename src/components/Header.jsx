@@ -74,7 +74,10 @@ const Header = () => {
                     color: "inherit",
                     textDecoration: "none",
                     fontWeight: "bold",
+                    alignContent: "center",
+                    textAlign: "center",
                     padding: "0.5rem 1rem",
+                    marginRight: index === menuItems.length - 1 ? "2rem" : "0",
                     "&:hover": {
                       backgroundColor: "rgba(255,255,255,0.1)",
                     },
