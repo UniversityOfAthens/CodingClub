@@ -6,23 +6,23 @@ export default function Meetings()
         <Typography variant="h1" component={"h1"} textAlign={"center"}  sx={{ fontSize: '4em',marginTop: "5vh" }}>
             Meetings
         </Typography>
-        <Typography variant="h2" component={"h2"} textAlign={"center"}  sx={{ fontSize: '3rem',marginTop: "5vh" }}>
+        <Typography variant="h2" component={"h2"} textAlign={"center"}  sx={{ fontSize: '3em',marginTop: "5vh" }}>
             Competitive Programming
         </Typography>
         <Typography>
-            Κάθε Πέμπτη 11:00 - 13:00 στην αίθουσα Β
+            Κάθε Πέμπτη 11:00 - 13:00 στην αίθουσα <span style={{ color: '#cfff00' }}>Β</span>
         </Typography>
-        <Typography variant="h2" component={"h2"}  textAlign={"center"}  sx={{ fontSize: '3rem',marginTop: "5vh" }}>
+        <Typography variant="h2" component={"h2"}  textAlign={"center"}  sx={{ fontSize: '3em',marginTop: "5vh" }}>
             Game Development
         </Typography>
         <Typography>
-            Κάθε Πέμπτη 11:00 - 13:00 στην αίθουσα Γ
+            Κάθε Πέμπτη 11:00 - 13:00 στην αίθουσα <span style={{ color: '#006eff' }}>Γ</span>
         </Typography>
-        <Typography variant="h2" component={"h2"}  textAlign={"center"}  sx={{ fontSize: '3rem',marginTop: "5vh" }}>
+        <Typography variant="h2" component={"h2"}  textAlign={"center"}  sx={{ fontSize: '3em',marginTop: "5vh" }}>
             Hackathons
         </Typography>
         <Typography>
-            Κάθε Παρασκευή 17:00 - 19:00 στην αίθουσα ΣΤ
+            Κάθε Παρασκευή 17:00 - 19:00 στην αίθουσα <span style={{ color: '#61ff57' }}>ΣΤ</span>
         </Typography>
         <Typography variant="h1" component={"h1"} textAlign={"center"}  sx={{ fontSize: '4em',marginTop: "5vh" }}>
             Χάρτης Σχολής
