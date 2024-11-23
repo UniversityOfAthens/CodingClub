@@ -53,7 +53,7 @@ export default function Home() {
           fontWeight: "bold",
         }}
       >
-        200+ Μέλη
+        250+ Μέλη
       </Typography>
       <Button
         variant="contained"
