@@ -11,8 +11,8 @@ export default function Home() {
         src="/logo.png"
         alt="Logo"
         sx={{
-          height: "45vh",
-          width: "45vh",
+          height: "50vh",
+          width: "50vh",
           marginY: "1vh",
           alignSelf: "center",
         }}
