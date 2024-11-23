@@ -5,7 +5,16 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <Box sx={{ textAlign: "center", display: "flex", flexDirection: "column" }}>
+    <Box
+      sx={{
+        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        maxWidth: "100%",
+        margin: "auto",
+        oveflowX: "none",
+      }}
+    >
       <Box
         component="img"
         src="/logo.png"
@@ -61,7 +70,14 @@ export default function Home() {
       >
         {" "}
         <BsDiscord />
-        <Typography sx={{ fontSize: "25px", paddingLeft: "10px", fontWeight:"bold", textTransform: "none" }}>
+        <Typography
+          sx={{
+            fontSize: "25px",
+            paddingLeft: "10px",
+            fontWeight: "bold",
+            textTransform: "none",
+          }}
+        >
           Μπες
         </Typography>
       </Button>
@@ -113,7 +129,11 @@ export default function Home() {
         }
       />
       <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
-      <Typography variant="h2" component={"h2"}>
+      <Typography
+        variant="h2"
+        component={"h2"}
+        sx={{ fontSize: { xs: "3rem" } }}
+      >
         Ενδιαφέρεσαι;
       </Typography>
       <Button
