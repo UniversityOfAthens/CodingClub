@@ -20,8 +20,8 @@ export default function Home() {
         src="/logo.png"
         alt="Logo"
         sx={{
-          height: "50vh",
-          width: "50vh",
+          height: {xs: "auto",sm:"50vh"},
+          width: {xs: "100%",sm:"50vh"},
           marginY: "1vh",
           alignSelf: "center",
         }}
@@ -132,7 +132,7 @@ export default function Home() {
       <Typography
         variant="h2"
         component={"h2"}
-        sx={{ fontSize: { xs: "3rem" } }}
+        sx={{ fontSize: { xs: "2em", md: "3em" } }}
       >
         Ενδιαφέρεσαι;
       </Typography>

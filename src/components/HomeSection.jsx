@@ -33,7 +33,7 @@ export default function HomeSection({
         <Typography
           variant="h2"
           component={"h2"}
-          sx={{ fontSize: { xs: "3rem" } }}
+          sx={{ fontSize: { xs: "2em", md: "3em" } }}
         >
           {title}
         </Typography>
