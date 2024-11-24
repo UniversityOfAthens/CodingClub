@@ -2,30 +2,29 @@ import React, { useState, useEffect } from "react";
 import { Typography } from "@mui/material";
 
 const RollingDigits = ({ result, text }) => {
-  const [displayNumber, setDisplayNumber] = useState("000");
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     let rollingInterval;
 
-    if (result === 0) {
-      // Still loading - start rolling digits
+    // Still loading or count is less than result
+    if (result === 0 || (result > 0 && count < result)) {
       rollingInterval = setInterval(() => {
-        const randomDigits = Math.floor(Math.random() * 900 + 100); // Random number between 100-999
-        setDisplayNumber(randomDigits.toString());
-      }, 50);
+        setCount((prevCount) => Math.min(prevCount + 1, result));
+      }, 20);
     } else if (result < 0) {
       // Error fetching data
-      setDisplayNumber("200+");
+      setCount(-1);
     } else {
       // Actual result
-      setDisplayNumber(result.toString());
+      setCount(result);
     }
 
     // Cleanup interval
     return () => {
       if (rollingInterval) clearInterval(rollingInterval);
     };
-  }, [result]);
+  }, [result, count]);
   return (
     <Typography
       sx={{
@@ -38,9 +37,10 @@ const RollingDigits = ({ result, text }) => {
         color: "secondary.main",
         fontWeight: "bold",
         justifyItems: "center",
+        opacity: count === 0 ? 0 : 1, // display nothing while loading
       }}
     >
-      {displayNumber} {text}
+      {count <= 0 ? "250+" : count.toString()} {text}
     </Typography>
   );
 };

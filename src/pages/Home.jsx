@@ -11,7 +11,6 @@ export default function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Delay
       const members = await countMembers();
       setMemberCount(members ? members : 0);
     };
