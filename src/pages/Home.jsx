@@ -1,9 +1,24 @@
+import { useState, useEffect } from "react";
+import countMembers from "../../backend/countMembers";
 import { Box, Typography, Button, Divider } from "@mui/material";
 import { BsDiscord } from "react-icons/bs";
 import HomeSection from "../components/HomeSection";
 import { Link } from "react-router-dom";
+import RollingDigits from "../components/RollingDigits";
 
 export default function Home() {
+  const [memberCount, setMemberCount] = useState(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // Delay
+      const members = await countMembers();
+      setMemberCount(members ? members : 0);
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <Box
       sx={{
@@ -20,8 +35,8 @@ export default function Home() {
         src="/logo.png"
         alt="Logo"
         sx={{
-          height: {xs: "auto",sm:"50vh"},
-          width: {xs: "100%",sm:"50vh"},
+          height: { xs: "auto", sm: "50vh" },
+          width: { xs: "100%", sm: "50vh" },
           marginY: "1vh",
           alignSelf: "center",
         }}
@@ -41,20 +56,7 @@ export default function Home() {
         Καλώς ήρθες στο Coding Club - μια δυναμική κοινότητα φοιτητών που
         μοιράζονται το πάθος τους για την τεχνολογία και τον προγραμματισμό!
       </Typography>
-      <Typography
-        sx={{
-          width: { xs: "100%", md: "75%" },
-          textAlign: "center",
-          alignContent: "center",
-          alignSelf: "center",
-          paddingX: "1rem",
-          fontSize: { md: "1.6em", xs: "1.1em" },
-          color: "secondary.main",
-          fontWeight: "bold",
-        }}
-      >
-        250+ Μέλη
-      </Typography>
+      <RollingDigits result={memberCount} text={"ΜΕΛΗ"} />
       <Button
         variant="contained"
         color="secondary"
