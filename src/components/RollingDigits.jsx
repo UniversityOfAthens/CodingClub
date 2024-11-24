@@ -9,9 +9,12 @@ const RollingDigits = ({ result, text }) => {
 
     // Still loading or count is less than result
     if (result === 0 || (result > 0 && count < result)) {
-      rollingInterval = setInterval(() => {
-        setCount((prevCount) => Math.min(prevCount + 1, result));
-      }, 20);
+      rollingInterval = setInterval(
+        () => {
+          setCount((prevCount) => Math.min(prevCount + 1, result));
+        },
+        count > 0 ? 0.02 * count : 10
+      );
     } else if (result < 0) {
       // Error fetching data
       setCount(-1);
