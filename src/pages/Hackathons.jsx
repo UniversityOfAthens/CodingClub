@@ -49,7 +49,6 @@ export default function Hackathons() {
       >
         Hackathons
       </Typography>
-      <Typography>Κάθε Παρασκευή 17:00 - 19:00 στην αίθουσα ΣΤ</Typography>
       <Typography
         variant="h1"
         component={"h1"}

@@ -3,30 +3,31 @@ import { Box, Typography } from "@mui/material";
 export default function Meetings()
 {
     return <Box sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-        <Typography variant="h1" component={"h1"} textAlign={"center"}  sx={{ fontSize: '4em',marginTop: "2rem" }}>
+        <Typography variant="h1" component={"h1"} textAlign={"center"}  sx={{ fontSize: '4em',marginY: "2rem" }}>
             Meetings
         </Typography>
-        <Typography variant="h2" component={"h2"} textAlign={"center"}  sx={{ fontSize: '3em',marginTop: "2rem" }}>
-            Competitive Programming
-        </Typography>
-        <Typography>
-            Κάθε Πέμπτη 11:00 - 13:00 στην αίθουσα <span style={{ color: '#cfff00' }}>Β</span>
-        </Typography>
-        <Typography variant="h2" component={"h2"}  textAlign={"center"}  sx={{ fontSize: '3em',marginTop: "2rem" }}>
-            Game Development
-        </Typography>
-        <Typography>
-            Κάθε Πέμπτη 11:00 - 13:00 στην αίθουσα <span style={{ color: '#006eff' }}>Γ</span>
-        </Typography>
-        <Typography variant="h2" component={"h2"}  textAlign={"center"}  sx={{ fontSize: '3em',marginTop: "2rem" }}>
-            Hackathons
-        </Typography>
-        <Typography>
-            Κάθε Παρασκευή 17:00 - 19:00 στην αίθουσα <span style={{ color: '#61ff57' }}>ΣΤ</span>
-        </Typography>
+        <Box 
+        sx={{
+            width: { xs: '100%', sm: "65%", md: '40%' },
+            height: '500px',
+            border: '1px solid #ccc',
+            borderRadius: '8px',
+            overflow: 'hidden',
+        }}
+        >
+        <iframe
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FAthens&showPrint=0&src=NzU4ZTlmY2NiMGM0NjAxYmIzMzNmYWI1MjZkNGUzMzIyNGQ0YTBjYWI4NjllZTIwMWEyYWYzNzkxMTIzNDUwYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23AD1457"
+            style={{
+            width: '100%',
+            height: '100%',
+            border: 'none',
+            }}
+        />
+        </Box>
         <Typography variant="h1" component={"h1"} textAlign={"center"}  sx={{ fontSize: '4em',marginTop: "2rem" }}>
             Χάρτης Σχολής
         </Typography>
+
         <Box
             component="img"
             src="/map.png"

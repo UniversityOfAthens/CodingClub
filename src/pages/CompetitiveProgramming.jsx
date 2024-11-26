@@ -49,8 +49,6 @@ export default function CompetitiveProgramming() {
       >
         Competitive Programming
       </Typography>
-
-      <Typography>Κάθε Πέμπτη 11:00 - 13:00 στην αίθουσα Β</Typography>
       <Typography
         variant="h1"
         component={"h1"}

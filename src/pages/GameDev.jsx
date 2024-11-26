@@ -50,7 +50,6 @@ export default function GameDev() {
       >
         Game Development
       </Typography>
-      <Typography>Κάθε Πέμπτη 11:00 - 13:00 στην αίθουσα Γ</Typography>
       <Typography
         variant="h1"
         component={"h1"}
