@@ -4,8 +4,9 @@ export default function formatFileName(input) {
 
   // Replace underscores with spaces
   let formattedString = withoutExtension.replace(/_/g, " ");
-  let capitalizedString = formattedString.replace(/\b\w/g, (char) =>
-    char.toUpperCase()
+  let capitalizedString = formattedString.replace(
+    /(^|[^A-Za-zΑ-ωά-ώΑ-Ω\d])([Α-ωά-ώΑ-Ω])/g,
+    (_, boundary, char) => boundary + char.toUpperCase()
   );
 
   return capitalizedString;
