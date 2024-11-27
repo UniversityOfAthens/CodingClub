@@ -4,7 +4,7 @@ export default function Meetings()
 {
     return <Box sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
         <Typography variant="h1" component={"h1"} textAlign={"center"}  sx={{ fontSize: '4em',marginY: "2rem" }}>
-            Meetings
+            Πρόγραμμα
         </Typography>
         <Box 
         sx={{
