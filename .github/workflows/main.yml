@@ -14,12 +14,26 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set Git identity
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the project
+      - name: Build the project
+        run: npm run build
+
+      # Step 5: Set Git identity
       - name: Set Git identity
         run: |
           git config --global user.email "matinanad@gmail.com"
           git config --global user.name "matinanadali"
 
-      # Step 3: Run deploy script
+      # Step 6: Run deploy script
       - name: Run deploy script
         run: npm run deploy
