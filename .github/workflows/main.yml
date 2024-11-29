@@ -28,12 +28,8 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      # Step 5: Set Git identity
-      - name: Set Git identity
-        run: |
-          git config --global user.email "matinanad@gmail.com"
-          git config --global user.name "matinanadali"
-
-      # Step 6: Run deploy script
-      - name: Run deploy script
-        run: npm run deploy
+      # Step 5: Deploy using gh-pages
+      - name: Deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx gh-pages -d dist --add
