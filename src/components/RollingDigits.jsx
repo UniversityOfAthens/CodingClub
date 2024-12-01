@@ -13,7 +13,7 @@ const RollingDigits = ({ result, text }) => {
         () => {
           setCount((prevCount) => Math.min(prevCount + 1, result));
         },
-        count > 0 ? 0.02 * count : 10
+        count > 0 ? 0.015 * count : 10
       );
     } else if (result < 0) {
       // Error fetching data

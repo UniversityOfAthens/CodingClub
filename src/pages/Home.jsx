@@ -85,8 +85,8 @@ export default function Home() {
       <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
       <HomeSection
         imageName={"./eh-logo.png"}
-        title="Ethical Hacking"
-        link={"/ethicalhacking"}
+        title="Security"
+        link={"/security"}
         description={
           "Βουτήξτε στον κόσμο της ασφάλειας πληροφοριακών συστημάτων και μάθετε πώς να εντοπίζετε και να διορθώνετε ευπάθειες."
         }
@@ -103,21 +103,21 @@ export default function Home() {
       />
       <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
       <HomeSection
-        imageName={"./h-logo.png"}
-        title="Hackathons"
-        link={"/hackathons"}
-        description={
-          "Λάβετε μέρος σε δημιουργικά hackathons, λύνοντας πραγματικά προβλήματα, μαθαίνοντας νέα εργαλεία και συναγωνιζόμενοι με άλλες ομάδες."
-        }
-      />
-      <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
-      <HomeSection
-        isReverse
         imageName={"./cp-logo.png"}
         title="Competitive Programming"
         link={"/competitiveprogramming"}
         description={
           "Βελτιώστε τις δεξιότητές σας στον προγραμματισμό μέσα από απαιτητικές ασκήσεις, αλγοριθμικά challenges και διαγωνισμούς."
+        }
+      />
+      <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
+      <HomeSection
+        isReverse
+        imageName={"./h-logo.png"}
+        title="Hackathons"
+        link={"/hackathons"}
+        description={
+          "Λάβετε μέρος σε δημιουργικά hackathons, λύνοντας πραγματικά προβλήματα, μαθαίνοντας νέα εργαλεία και συναγωνιζόμενοι με άλλες ομάδες."
         }
       />
       <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
@@ -167,7 +167,7 @@ export default function Home() {
           fontWeight: "bold",
         }}
       >
-        Δες τα Meetings
+        Δες το Πρόγραμμα
       </Button>
       <Typography marginTop={"2rem"}>
         Επικοινώνησε στο codingclub@di.uoa.gr

@@ -25,10 +25,11 @@ const Header = () => {
 
   const menuItems = [
     { text: "Πρόγραμμα", path: "/meetings" },
+    { text: "Ανακοινώσεις", path: "/announcements" },
+    { text: "Security", path: "/security" },
     { text: "Game Development", path: "/gamedev" },
-    { text: "Ethical Hacking", path: "/ethicalhacking" },
-    { text: "Hackathons", path: "/hackathons" },
     { text: "Competitive Programming", path: "/competitiveprogramming" },
+    { text: "Hackathons", path: "/hackathons" },
     { text: "Open Source", path: "/opensource" },
   ];
 

@@ -14,6 +14,7 @@ import Hackathons from "./pages/Hackathons";
 import CompetitiveProgramming from "./pages/CompetitiveProgramming";
 import OpenSource from "./pages/OpenSource";
 import Meetings from "./pages/Meetings";
+import Announcmenets from "./pages/Announcements";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -37,11 +38,15 @@ const router = createBrowserRouter([
         element: <Meetings />,
       },
       {
+        path: "/announcements",
+        element: <Announcmenets/>
+      },
+      {
         path: "/gamedev",
         element: <GameDev />,
       },
       {
-        path: "/ethicalhacking",
+        path: "/security",
         element: <EthicalHacking />,
       },
       {
