@@ -2,7 +2,7 @@ import * as React from "react";
 import { createRoot } from "react-dom/client";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { darkTheme, lightTheme } from "./theme";
 import Layout from "./pages/Layout";
 import ErrorPage from "./pages/ErrorPage";
@@ -19,7 +19,7 @@ import Announcmenets from "./pages/Announcements";
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Layout />,
