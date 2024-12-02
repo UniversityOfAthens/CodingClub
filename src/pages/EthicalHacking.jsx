@@ -50,7 +50,7 @@ export default function EthicalHacking() {
         S
         sx={{ fontSize: "3rem" }}
       >
-        Ethical Hacking
+        Security
       </Typography>
       <Typography
         variant="h1"
