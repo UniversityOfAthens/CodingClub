@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist --add"
+    "deploy": "gh-pages -d dist --add",
+    "start": "node backend/fetchAnnouncement.js"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
