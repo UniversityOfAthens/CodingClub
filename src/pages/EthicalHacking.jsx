@@ -70,7 +70,6 @@ export default function EthicalHacking() {
         component={"h1"}
         textAlign={"center"}
         marginY={"1rem"}
-        S
         sx={{ fontSize: "3rem" }}
       >
         Security
