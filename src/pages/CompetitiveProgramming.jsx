@@ -41,7 +41,7 @@ export default function CompetitiveProgramming() {
   useEffect(() => {
     const fileUrl = '/assets/announcements/competitive programming.md'; 
     loadFile(fileUrl).then((file) => {
-      if (file) {
+      if (file && file.content) {
         setAnnouncements((prevAnnouncements) => [
           ...prevAnnouncements,
           ...file.content.split("---").splice(0, 1),

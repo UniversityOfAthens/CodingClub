@@ -17,7 +17,8 @@ export default function Hackathons() {
         return response.text();
       })
       .then((data) => {
-        setAnnouncements((announcements) => [...announcements, ...data.split("---").splice(0, 1)]);
+        if (data && data.length > 1)
+          setAnnouncements((announcements) => [...announcements, ...data.split("---").splice(0, 1)]);
       })
       .catch((error) => {
         console.error("Error fetching file:", error);
@@ -41,10 +42,10 @@ export default function Hackathons() {
   useEffect(() => {
     const fileUrl = '/assets/announcements/hackathons.md'; 
     loadFile(fileUrl).then((file) => {
-      if (file) {
+      if (file && file.content) {
         setAnnouncements((prevAnnouncements) => [
           ...prevAnnouncements,
-          ...file.content.split("---").splice(0, 1),
+          ...file.content.split("---").splice(0, 1)
         ]);
       }
     });

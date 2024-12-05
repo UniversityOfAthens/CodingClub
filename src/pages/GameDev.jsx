@@ -41,7 +41,7 @@ export default function GameDev() {
   useEffect(() => {
     const fileUrl = '/assets/announcements/gamedev.md'; 
     loadFile(fileUrl).then((file) => {
-      if (file) {
+      if (file  && file.content) {
         setAnnouncements((prevAnnouncements) => [
           ...prevAnnouncements,
           ...file.content.split("---").splice(0, 1),

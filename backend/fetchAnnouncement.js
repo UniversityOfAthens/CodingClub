@@ -49,7 +49,7 @@ const fetchAnnouncements = async () => {
         // Create files to avoid "file not found" error
         for (let fileName of allFileNames) {
             const filePath = `${OUTPUT_DIR}/${fileName}.md`;
-            fs.writeFileSync(filePath, "---", 'utf8');
+            fs.writeFileSync(filePath, "", 'utf8');
         }
 
         for (let msg of messages) {

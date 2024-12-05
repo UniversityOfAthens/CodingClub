@@ -41,7 +41,7 @@ export default function EthicalHacking() {
   useEffect(() => {
     const fileUrl = '/assets/announcements/security.md'; 
     loadFile(fileUrl).then((file) => {
-      if (file) {
+      if (file  && file.content) {
         setAnnouncements((prevAnnouncements) => [
           ...prevAnnouncements,
           ...file.content.split("---").splice(0, 1),
