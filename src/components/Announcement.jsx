@@ -3,6 +3,7 @@ import { Card, CardContent, Typography } from "@mui/material";
 import ReactMarkdown from "react-markdown";
 
 const Announcement = ({ title, description }) => {
+  if (!title && !description) return <></>
   return (
     <Card sx={{ marginBottom: "1.5rem", boxShadow: 3 }}>
       <CardContent>
