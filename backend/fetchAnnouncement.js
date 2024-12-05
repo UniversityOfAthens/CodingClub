@@ -52,18 +52,16 @@ const fetchAnnouncements = async () => {
 
             // Include respective file name for each mentioned role
             for (let roleId of msg.mention_roles) {
-                    const clubName = roleToClubMapping[roleId];
-                    if (clubName) {
-                        fileNames.push(clubName);
-                    }
+                const clubName = roleToClubMapping[roleId];
+                if (clubName) {
+                    fileNames.push(clubName);
+                }
             }
         
             // Write content to files
             for (let fileName of fileNames) {
                 const filePath = `${OUTPUT_DIR}/${fileName}.md`;
-                // Remove substrings matching the pattern <@&<digits>>
-                const msgWithoutMentions = msg.content.replace(/<@&\d+>/g, "");  
-                const markdownContent = `### ${formatTimestamp(msg.timestamp)}\n\n\n${msgWithoutMentions}\n\n\n---\n\n\n`;
+                const markdownContent = `### ${formatTimestamp(msg.timestamp)}\n\n\n${msg.content}\n\n\n---\n\n\n`;
         
                 fs.appendFileSync(filePath, markdownContent, 'utf8');
             }
