@@ -7,13 +7,49 @@ export default function CompetitiveProgramming() {
   const [announcements, setAnnouncements] = useState([]);
 
   useEffect(() => {
-    fetch('/announcements/competitive programming.md')
-    .then((response) => response.text())
-    .then((data) => {
-    setAnnouncements(data.split("---").splice(0, 1))
-    });
+    const fileUrl = "https://codingclub-4bvs.onrender.com/announcements/competitive programming.md";  
+    fetch(fileUrl)
+      .then((response) => {
+        // Error loading file or file does not exist
+        if (!response.ok) {
+          return "";
+        }
+        return response.text();
+      })
+      .then((data) => {
+        setAnnouncements((announcements) => [...announcements, ...data.split("---").splice(0, 1)]);
+      })
+      .catch((error) => {
+        console.error("Error fetching file:", error);
+      });
+  }, []);
+
+  // Fetch announcements from files
+  const loadFile = async (fileUrl) => {
+    try {
+      const response = await fetch(fileUrl); 
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${fileUrl}`);
+      }
+      const content = await response.text();  
+      return { content }; 
+    } catch (error) {
+      console.error("Error loading file:", error);
+    }
+  };
   
-  })
+  useEffect(() => {
+    const fileUrl = '/assets/announcements/competitive programming.md'; 
+    loadFile(fileUrl).then((file) => {
+      if (file) {
+        setAnnouncements((prevAnnouncements) => [
+          ...prevAnnouncements,
+          ...file.content.split("---").splice(0, 1),
+        ]);
+      }
+    });
+  }, []);
+
   return (
     <Box
       sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
@@ -56,7 +92,7 @@ export default function CompetitiveProgramming() {
         {announcements.map((announcement, index) => (
           <Announcement
             title={""}
-            description={announcement}
+            description={announcement.replace(/<@&\d+>/g, "")}
             key={index}
           />
         ))}

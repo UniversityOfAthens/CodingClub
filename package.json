@@ -23,6 +23,7 @@
     "add-to-calendar-button": "^2.7.3",
     "add-to-calendar-button-react": "^2.7.3",
     "axios": "^1.7.9",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.1",
     "node-schedule": "^2.1.1",

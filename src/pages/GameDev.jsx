@@ -4,26 +4,50 @@ import Announcement from "../components/Announcement";
 import formatFileName from "../general/formatFileName";
 
 export default function GameDev() {
-  const [markdownFiles, setMarkdownFiles] = useState([]);
+  const [announcements, setAnnouncements] = useState([]);
 
   useEffect(() => {
-    const files = import.meta.glob("../assets/announcements/gamedev/*.md", {
-      as: "raw",
-    });
-    const loadFiles = async () => {
-      const loadedFiles = await Promise.all(
-        Object.keys(files).map(async (filePath) => {
-          const content = await files[filePath]();
-          return {
-            name: filePath.split("/").pop(),
-            content,
-          };
-        })
-      );
-      setMarkdownFiles(loadedFiles);
-    };
+    const fileUrl = "https://codingclub-4bvs.onrender.com/announcements/gamedev.md";  
+    fetch(fileUrl)
+      .then((response) => {
+        // Error loading file or file does not exist
+        if (!response.ok) {
+          return "";
+        }
+        return response.text();
+      })
+      .then((data) => {
+        setAnnouncements((announcements) => [...announcements, ...data.split("---").splice(0, 1)]);
+      })
+      .catch((error) => {
+        console.error("Error fetching file:", error);
+      });
+  }, []);
 
-    loadFiles();
+  // Fetch announcements from files
+  const loadFile = async (fileUrl) => {
+    try {
+      const response = await fetch(fileUrl); 
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${fileUrl}`);
+      }
+      const content = await response.text();  
+      return { content }; 
+    } catch (error) {
+      console.error("Error loading file:", error);
+    }
+  };
+  
+  useEffect(() => {
+    const fileUrl = '/assets/announcements/gamedev.md'; 
+    loadFile(fileUrl).then((file) => {
+      if (file) {
+        setAnnouncements((prevAnnouncements) => [
+          ...prevAnnouncements,
+          ...file.content.split("---").splice(0, 1),
+        ]);
+      }
+    });
   }, []);
 
   return (
@@ -65,10 +89,10 @@ export default function GameDev() {
           width: { xs: "100%", sm: "80%", lg: "45%" },
         }}
       >
-        {markdownFiles.map((file, index) => (
+        {announcements.map((announcement, index) => (
           <Announcement
-            title={formatFileName(file.name)}
-            description={file.content}
+            title={""}
+            description={announcement.replace(/<@&\d+>/g, "")}
             key={index}
           />
         ))}
