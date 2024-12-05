@@ -61,8 +61,9 @@ const fetchAnnouncements = async () => {
             // Write content to files
             for (let fileName of fileNames) {
                 const filePath = `${OUTPUT_DIR}/${fileName}.md`;
-                
-                const markdownContent = `### ${formatTimestamp(msg.timestamp)}\n\n\n${msg.content}\n\n\n---\n\n\n`;
+                // Remove substrings matching the pattern <@&<digits>>
+                const msgWithoutMentions = msg.content.replace(/<@&\d+>/g, "");  
+                const markdownContent = `### ${formatTimestamp(msg.timestamp)}\n\n\n${msgWithoutMentions}\n\n\n---\n\n\n`;
         
                 fs.appendFileSync(filePath, markdownContent, 'utf8');
             }

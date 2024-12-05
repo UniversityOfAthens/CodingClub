@@ -4,27 +4,16 @@ import Announcement from "../components/Announcement";
 import formatFileName from "../general/formatFileName";
 
 export default function CompetitiveProgramming() {
-  const [markdownFiles, setMarkdownFiles] = useState([]);
+  const [announcements, setAnnouncements] = useState([]);
 
   useEffect(() => {
-    const files = import.meta.glob("../../announcements/competitive programming.md", {
-      as: "raw",
+    fetch('/announcements/competitive programming.md')
+    .then((response) => response.text())
+    .then((data) => {
+    setAnnouncements(data.split("---").splice(0, 1))
     });
-    const loadFiles = async () => {
-      const loadedFiles = await Promise.all(
-        Object.keys(files).map(async (filePath) => {
-          const content = await files[filePath]();
-          return {
-            name: filePath.split("/").pop(),
-            content,
-          };
-        })
-      );
-      setMarkdownFiles(loadedFiles);
-    };
-
-    loadFiles();
-  }, []);
+  
+  })
   return (
     <Box
       sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
@@ -64,10 +53,10 @@ export default function CompetitiveProgramming() {
           width: { xs: "100%", sm: "80%", lg: "45%" },
         }}
       >
-        {markdownFiles.map((file, index) => (
+        {announcements.map((announcement, index) => (
           <Announcement
-            title={formatFileName(file.name)}
-            description={file.content}
+            title={""}
+            description={announcement}
             key={index}
           />
         ))}
