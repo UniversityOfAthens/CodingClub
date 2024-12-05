@@ -38,13 +38,19 @@ const fetchAnnouncements = async () => {
         );
 
         const messages = response.data;
-        const allFileNames = ["competitive programming", "security", "gamedev", "hackathons"];
+        const allFileNames = ["competitive programming", "security", "gamedev", "hackathons", "open source"];
         const roleToClubMapping = {
             '1304747907597078569': 'competitive programming',
             '1305879385454280745': 'security',
             '1304745885212868658': 'gamedev',
             '1304751945034108958': 'hackathons',
         };
+
+        // Create files to avoid "file not found" error
+        for (let fileName of allFileNames) {
+            const filePath = `${OUTPUT_DIR}/${fileName}.md`;
+            fs.writeFileSync(filePath, "---", 'utf8');
+        }
 
         for (let msg of messages) {
             let fileNames = [];
