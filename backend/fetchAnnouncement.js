@@ -12,6 +12,9 @@ const DISCORD_TOKEN = process.env.DISCORD_API_TOKEN;
 const DISCORD_CHANNEL_ID = process.env.DISCORD_CHANNEL_ID;
 const OUTPUT_DIR = './announcements';
 
+// Enable CORS for requests from localhost:5173
+app.use(cors({ origin: "http://localhost:5173" }));
+
 app.use('/announcements', express.static(OUTPUT_DIR));
 
 app.get('/', (req, res) => {
