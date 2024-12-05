@@ -7,7 +7,7 @@ export default function CompetitiveProgramming() {
   const [markdownFiles, setMarkdownFiles] = useState([]);
 
   useEffect(() => {
-    const files = import.meta.glob("../assets/announcements/cp/*.md", {
+    const files = import.meta.glob("../../announcements/competitive programming.md", {
       as: "raw",
     });
     const loadFiles = async () => {
