@@ -1,8 +1,13 @@
 import { Box, Typography } from "@mui/material";
+import { Helmet } from 'react-helmet';
 
 export default function Meetings()
 {
     return <Box sx={{display: "flex", flexDirection: "column", alignItems: "center"}}>
+        <Helmet>
+            <title>Meetings - Dit Coding Club</title>
+            <meta name="description" content="See the schedule and meetings of DIT Coding Club." />
+        </Helmet>
         <Typography variant="h1" component={"h1"} textAlign={"center"}  sx={{ fontSize: '4em',marginY: "2rem" }}>
             Πρόγραμμα
         </Typography>

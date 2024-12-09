@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import RollingDigits from "../components/RollingDigits";
 import Carousel from "../components/Carousel";
 import axios from "axios";
+import { Helmet } from 'react-helmet';
+
 export default function Home() {
   const [memberCount, setMemberCount] = useState(0);
   const [slides, setSlides] = useState([
@@ -42,6 +44,10 @@ export default function Home() {
         oveflowX: "none",
       }}
     >
+      <Helmet>
+        <title>Home - Dit Coding Club</title>
+        <meta name="description" content="Home page of the DIT Coding Club." />
+      </Helmet>
       <Box
         component="img"
         src="/logo.png"

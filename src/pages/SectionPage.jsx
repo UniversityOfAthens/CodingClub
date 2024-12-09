@@ -4,6 +4,7 @@ import Announcement from "../components/Announcement";
 import formatFileName from "../general/formatFileName";
 import axios from "axios";
 import { useParams } from "react-router";
+import { Helmet } from 'react-helmet';
 
 const renderData = {
     gamedev: {title: "Game Development", image: "gd-logo"},
@@ -32,6 +33,10 @@ export default function SectionPage() {
     <Box
       sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
+      <Helmet>
+        <title>{`${renderData[sectionId].title} - Dit Coding Club`}</title>
+        <meta name="description" content={`See the latest about ${renderData[sectionId].title} of DIT Coding Club.`} />
+      </Helmet>
       <Box
         component="img"
         src={`/${renderData[sectionId].image}.png`}
