@@ -5,9 +5,15 @@ import { BsDiscord } from "react-icons/bs";
 import HomeSection from "../components/HomeSection";
 import { Link } from "react-router-dom";
 import RollingDigits from "../components/RollingDigits";
-
+import Carousel from "../components/Carousel";
+import axios from "axios";
 export default function Home() {
   const [memberCount, setMemberCount] = useState(0);
+  const [slides, setSlides] = useState([
+    { id: 1, title: 'Slide 1', description: 'This is the first slide' },
+    { id: 2, title: 'Slide 2', description: 'This is the second slide' },
+    { id: 3, title: 'Slide 3', description: 'This is the third slide' },
+  ]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,6 +22,13 @@ export default function Home() {
     };
 
     fetchData();
+
+    const fethImportantAnnouncmenets = async () => {
+      const response = await axios.get("https://codingclub-4bvs.onrender.com/announcements/important.md");
+      console.log(response.data);
+    }
+    
+    fethImportantAnnouncmenets();
   }, []);
 
   return (
@@ -83,8 +96,10 @@ export default function Home() {
         </Typography>
       </Button>
       <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
+      <Carousel slides={slides}/>
+      <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
       <HomeSection
-        imageName={"./eh-logo.png"}
+        imageName={"./se-logo.png"}
         title="Security"
         link={"/security"}
         description={

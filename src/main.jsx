@@ -7,14 +7,9 @@ import { darkTheme, lightTheme } from "./theme";
 import Layout from "./pages/Layout";
 import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/Home";
-import GameDev from "./pages/GameDev";
-import EthicalHacking from "./pages/EthicalHacking";
 import "./main.css";
-import Hackathons from "./pages/Hackathons";
-import CompetitiveProgramming from "./pages/CompetitiveProgramming";
-import OpenSource from "./pages/OpenSource";
 import Meetings from "./pages/Meetings";
-import Announcmenets from "./pages/Announcements";
+import SectionPage from "./pages/SectionPage"
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -38,29 +33,9 @@ const router = createHashRouter([
         element: <Meetings />,
       },
       {
-        path: "/announcements",
-        element: <Announcmenets/>
-      },
-      {
-        path: "/gamedev",
-        element: <GameDev />,
-      },
-      {
-        path: "/security",
-        element: <EthicalHacking />,
-      },
-      {
-        path: "/hackathons",
-        element: <Hackathons />,
-      },
-      {
-        path: "/competitiveprogramming",
-        element: <CompetitiveProgramming />,
-      },
-      {
-        path: "/opensource",
-        element: <OpenSource />,
-      },
+        path: "/:sectionId",
+        element: <SectionPage/>
+      }
     ],
   },
 ]);

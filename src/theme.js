@@ -1,7 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
-
 export const lightTheme = createTheme({
   cssVariables: true,
   palette: {
@@ -35,4 +34,4 @@ export const darkTheme = createTheme({
         main: red.A400,
       },
     },
-  });
+});

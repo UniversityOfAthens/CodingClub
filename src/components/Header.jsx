@@ -28,7 +28,7 @@ const Header = () => {
     { text: "Ανακοινώσεις", path: "/announcements" },
     { text: "Security", path: "/security" },
     { text: "Game Development", path: "/gamedev" },
-    { text: "Competitive Programming", path: "/competitiveprogramming" },
+    { text: "Competitive Programming", path: "/cp" },
     { text: "Hackathons", path: "/hackathons" },
     { text: "Open Source", path: "/opensource" },
   ];
