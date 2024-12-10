@@ -2,7 +2,7 @@ import * as React from "react";
 import { createRoot } from "react-dom/client";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { darkTheme } from "./theme";
 import Layout from "./pages/Layout";
 import ErrorPage from "./pages/ErrorPage";
@@ -14,7 +14,7 @@ import SectionPage from "./pages/SectionPage"
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
