@@ -11,11 +11,7 @@ import { Helmet } from 'react-helmet';
 
 export default function Home() {
   const [memberCount, setMemberCount] = useState(0);
-  const [slides, setSlides] = useState([
-    { id: 1, title: 'Slide 1', description: 'This is the first slide' },
-    { id: 2, title: 'Slide 2', description: 'This is the second slide' },
-    { id: 3, title: 'Slide 3', description: 'This is the third slide' },
-  ]);
+  const [slides, setSlides] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,8 +22,12 @@ export default function Home() {
     fetchData();
 
     const fethImportantAnnouncmenets = async () => {
-      const response = await axios.get("https://codingclub-4bvs.onrender.com/announcements/important.md");
+      const response = await axios.get("http://localhost:3000/api/announcements/important");
       console.log(response.data);
+      for(const announcement of response.data)
+      {
+        setSlides(prevItems => [...prevItems, {id: announcement.id, description: announcement.content}]);
+      }
     }
     
     fethImportantAnnouncmenets();
