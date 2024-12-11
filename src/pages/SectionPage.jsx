@@ -24,7 +24,7 @@ export default function SectionPage() {
         setAnnouncements([]);
         console.log("setting announce");
         const response = await axios.get(
-            `http://localhost:3000/api/announcements/${sectionId}`
+            `${import.meta.env.VITE_URL}/api/announcements/${sectionId}`
         )
         const announcementsArray = response.data;
         for(const announcement of announcementsArray)

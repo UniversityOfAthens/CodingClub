@@ -22,7 +22,7 @@ export default function Home() {
     fetchData();
 
     const fethImportantAnnouncmenets = async () => {
-      const response = await axios.get("http://localhost:3000/api/announcements/important");
+      const response = await axios.get(`${import.meta.env.VITE_URL}/api/announcements/important`);
       console.log(response.data);
       for(const announcement of response.data)
       {
