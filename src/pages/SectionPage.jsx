@@ -12,7 +12,7 @@ const renderData = {
     security: {title: "Security", image: "se-logo"},
     opensource: {title: "Open Source", image: "os-logo"},
     hackathons: {title: "Hackathons", image: "h-logo"},
-    announcements: {title: "Γενικές Ανακοινώσεις", image: "logo"},
+    general: {title: "Γενικές Ανακοινώσεις", image: "logo"},
 }
 
 export default function SectionPage() {
@@ -21,13 +21,19 @@ export default function SectionPage() {
 
   useEffect(() => {
     const getAnnouncmenets = async () => {
+        setAnnouncements([]);
+        console.log("setting announce");
         const response = await axios.get(
-            `https://codingclub-4bvs.onrender.com/api/announcements/${sectionId}`
+            `http://localhost:3000/api/announcements/${sectionId}`
         )
-        console.log(response.data);
+        const announcementsArray = response.data;
+        for(const announcement of announcementsArray)
+        {
+          setAnnouncements(prevItems => [...prevItems, {id: announcement.id, description: announcement.content}]);
+        }
     }
     getAnnouncmenets();
-  }, []);
+  }, [sectionId]); // everytime we load the page or change section id
 
   return (
     <Box
@@ -66,7 +72,7 @@ export default function SectionPage() {
         {announcements.map((announcement, index) => (
           <Announcement
             title={""}
-            description={announcement.replace(/<@&\d+>/g, "")}
+            description={announcement.description}
             key={index}
           />
         ))}
