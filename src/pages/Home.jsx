@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet';
 
 export default function Home() {
   const [memberCount, setMemberCount] = useState(0);
-  const [slides, setSlides] = useState([]);
+  const [announcements, setAnnouncements] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,7 +26,7 @@ export default function Home() {
       console.log(response.data);
       for(const announcement of response.data)
       {
-        setSlides(prevItems => [...prevItems, {id: announcement.id, description: announcement.content}]);
+        setAnnouncements(prevItems => [...prevItems, announcement]);
       }
     }
     
@@ -102,7 +102,7 @@ export default function Home() {
         </Typography>
       </Button>
       <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
-      <Carousel slides={slides}/>
+      <Carousel announcements={announcements}/>
       <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
       <HomeSection
         imageName={"./se-logo.png"}

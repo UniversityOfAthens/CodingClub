@@ -29,7 +29,7 @@ export default function SectionPage() {
         const announcementsArray = response.data;
         for(const announcement of announcementsArray)
         {
-          setAnnouncements(prevItems => [...prevItems, {id: announcement.id, description: announcement.content}]);
+          setAnnouncements(prevItems => [...prevItems, announcement]);
         }
     }
     getAnnouncmenets();
@@ -71,8 +71,10 @@ export default function SectionPage() {
       >
         {announcements.map((announcement, index) => (
           <Announcement
-            title={""}
-            description={announcement.description}
+            title={announcement.title}
+            description={announcement.content}
+            date={announcement.date}
+            imageUrls={announcement.discordAttachmentUrls}
             key={index}
           />
         ))}
