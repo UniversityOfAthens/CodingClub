@@ -74,7 +74,7 @@ export default function SectionPage() {
             title={announcement.title}
             description={announcement.content}
             date={announcement.date}
-            imageUrls={announcement.discordAttachmentUrls}
+            imagesUrl={announcement.imagesUrl}
             key={index}
           />
         ))}

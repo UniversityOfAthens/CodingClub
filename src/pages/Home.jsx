@@ -88,7 +88,6 @@ export default function Home() {
           marginY: "2rem",
         }}
       >
-        {" "}
         <BsDiscord />
         <Typography
           sx={{
@@ -102,8 +101,14 @@ export default function Home() {
         </Typography>
       </Button>
       <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
+      <Typography marginBottom={"2rem"} variant="h2">
+        Ανακοινώσεις
+      </Typography>     
       <Carousel announcements={announcements}/>
       <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
+      <Typography marginBottom={"7rem"} variant="h2">
+        Τα Πεδία
+      </Typography>
       <HomeSection
         imageName={"./se-logo.png"}
         title="Security"

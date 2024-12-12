@@ -2,14 +2,14 @@ import React from "react";
 import { Card,CardHeader,CardMedia, Box, CardContent, Typography } from "@mui/material";
 import ReactMarkdown from "react-markdown";
 
-const Announcement = ({ title, description, date, imageUrls }) => {
+const Announcement = ({ title, description, date, imagesUrl }) => {
   return (
     <Card sx={{ marginBottom: "1.5rem", boxShadow: 3, height: "100%" }}>
       <CardHeader
           title={title}
           subheader={date}
       />
-      {imageUrls?.map((imageUrl, index) => (
+      {imagesUrl?.map((imageUrl, index) => (
         <CardMedia
           key={index}
           component="img"
@@ -64,6 +64,11 @@ const Announcement = ({ title, description, date, imageUrls }) => {
                 </Typography>
               ),
               pre: ({ node, ...props }) => (
+                <Typography {...props} sx={{margin: "0px",padding:"0px"}}>
+                  {props.children}
+                </Typography>
+              ),
+              ul: ({ node, ...props }) => (
                 <Typography {...props} sx={{margin: "0px",padding:"0px"}}>
                   {props.children}
                 </Typography>

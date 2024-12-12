@@ -31,8 +31,8 @@ export default function HomeSection({
       />
       <Box>
         <Typography
-          variant="h2"
-          component={"h2"}
+          variant="h3"
+          component={"h3"}
           sx={{ fontSize: { xs: "2em", md: "3em" } }}
         >
           {title}

@@ -14,7 +14,7 @@ const Carousel = ({announcements}) => {
     <Box
       sx={{
       width: { xs: "95%", md: "80%" },
-      height: "80vh",
+      minHeight: "80vh",
       alignSelf: "center",
       display: "flex",
     }}>
@@ -24,6 +24,7 @@ const Carousel = ({announcements}) => {
         pagination={{ clickable: true }}
         // autoplay={{ delay: 3000 }}
         slidesPerView={1}
+        initialSlide={2}
         loop={true}
         style={{
           '--swiper-navigation-color': '#43C5E7', // Arrow color
@@ -37,7 +38,7 @@ const Carousel = ({announcements}) => {
               title={announcement.title}
               description={announcement.content}
               date={announcement.date}
-              imageUrls={announcement.discordAttachmentUrls}
+              imagesUrl={announcement.imagesUrl}
               key={index}
             />
           </SwiperSlide>
