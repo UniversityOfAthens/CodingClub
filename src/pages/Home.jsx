@@ -8,10 +8,13 @@ import RollingDigits from "../components/RollingDigits";
 import Carousel from "../components/Carousel";
 import axios from "axios";
 import { Helmet } from 'react-helmet';
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 export default function Home() {
   const [memberCount, setMemberCount] = useState(0);
   const [announcements, setAnnouncements] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,8 +25,9 @@ export default function Home() {
     fetchData();
 
     const fethImportantAnnouncmenets = async () => {
+      setLoading(true);
       const response = await axios.get(`${import.meta.env.VITE_URL}/api/announcements/important`);
-      console.log(response.data);
+      setLoading(false);
       for(const announcement of response.data)
       {
         setAnnouncements(prevItems => [...prevItems, announcement]);
@@ -103,8 +107,12 @@ export default function Home() {
       <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
       <Typography marginBottom={"2rem"} variant="h2">
         Ανακοινώσεις
-      </Typography>     
-      <Carousel announcements={announcements}/>
+      </Typography>
+      <Box sx={{minHeight:"80vh", display: "flex", justifyContent: "center"}}>
+        {loading && <CircularProgress color="secondary" sx={{marginTop: "10rem"}} size={100}/>}
+        {!loading && <Carousel announcements={announcements}/>}
+      </Box>     
+
       <Divider sx={{ width: "80%", alignSelf: "center", marginY: "3rem" }} />
       <Typography marginBottom={"7rem"} variant="h2">
         Τα Πεδία
