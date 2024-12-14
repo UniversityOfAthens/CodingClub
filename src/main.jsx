@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import "./main.css";
 import Meetings from "./pages/Meetings";
 import SectionPage from "./pages/SectionPage"
+import Talks from "./pages/Talks";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/meetings",
         element: <Meetings />,
+      },
+      {
+        path: "/talks",
+        element: <Talks/>
       },
       {
         path: "/:sectionId",

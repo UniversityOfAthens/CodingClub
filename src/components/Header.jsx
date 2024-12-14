@@ -26,6 +26,7 @@ const Header = () => {
   const menuItems = [
     { text: "Πρόγραμμα", path: "/meetings" },
     { text: "Γενικές Ανακοινώσεις", path: "/general" },
+    { text: "Ομιλίες", path: "/talks" },
     { text: "Security", path: "/security" },
     { text: "Game Development", path: "/gamedev" },
     { text: "Competitive Programming", path: "/cp" },
