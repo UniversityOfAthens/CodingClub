@@ -73,6 +73,11 @@ const Announcement = ({ title, description, date, imagesUrl }) => {
                   {props.children}
                 </Typography>
               ),
+              ol: ({ node, ...props }) => (
+                <Typography {...props} sx={{margin: "0px",padding:"0px"}}>
+                  {props.children}
+                </Typography>
+              ),
             }}
           >
             {description}
