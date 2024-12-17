@@ -5,6 +5,8 @@
 
 ## Features
 - cors in backend
+- make announcements sorted
+- improve SEO somehow
 
 ## Bugs
 - fix duplicate announcements when switching sections too fast. when exiting a section we need to stop any
