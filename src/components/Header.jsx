@@ -16,7 +16,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery('(max-width: 1200px)');
   const navigate = useNavigate();
 
   const toggleDrawer = (open) => () => {

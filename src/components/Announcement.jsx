@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 
 const Announcement = ({ title, description, date, imagesUrl }) => {
   return (
-    <Card sx={{ marginBottom: "1.5rem", boxShadow: 3, height: "100%" }}>
+    <Card sx={{ margin: "1rem 1.5rem 1rem", boxShadow: 3, height: "100%" }}>
       <CardHeader
           title={title}
           subheader={date}
