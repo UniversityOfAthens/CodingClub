@@ -8,7 +8,6 @@ import 'swiper/css/pagination';
 import "./MyCarousel.css"
 import Announcement from './Announcement';
 
-
 const Carousel = ({announcements}) => {
   return (
     <Box
