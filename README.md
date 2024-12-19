@@ -7,7 +7,7 @@
 - [ ] cors in backend
 - [x] make announcements sorted
 - [ ] improve SEO somehow
-- [ ] add link to contribute in footer
+- [x] add link to contribute in footer
 - [ ] make links to subpages work and not redirect you to main page (ex https://codingclub.di.uoa.gr/talks)
 - [ ] fix zok youtube link
 - [ ] make sections for header (general, sections etc)
