@@ -96,7 +96,7 @@ const Header = () => {
               <MenuIcon />
             </IconButton>
           ) : (
-            <Box sx={{ marginLeft: "auto", display: "flex" }}>
+            <Box sx={{ marginLeft: "auto", display: "flex"  }}>
               {sections.map((section, i) => {
                 const hasSubItems = section.subItems && section.subItems.length > 0;
                 return (
@@ -113,8 +113,7 @@ const Header = () => {
                           color: "inherit",
                           textDecoration: "none",
                           fontWeight: "bold",
-                          paddingX: "1rem",
-                          paddingTop: "0rem",
+                          padding: "1rem",
                           cursor: "pointer",
                           "&:hover": { backgroundColor: "rgba(255,255,255,0.1)" },
                         }}
@@ -130,7 +129,8 @@ const Header = () => {
                           color: "inherit",
                           textDecoration: "none",
                           fontWeight: "bold",
-                          paddingX: "1rem",
+                          padding: "1rem",
+                          display: "flex",
                           cursor: "pointer",
                           "&:hover": { backgroundColor: "rgba(255,255,255,0.1)" },
                         }}
