@@ -15,7 +15,7 @@ const Footer = () => {
         &copy; {new Date().getFullYear()} Dit Coding Club
       </Typography>
       <Typography>
-        Want to contribute? Drop a PR <Link target="_blank" href="https://github.com/UniversityOfAthens/CodingClub" sx={{color:"#43C5E7"}}>here!</Link>
+        Θες να βοηθήσεις στο development του site? Δες <Link target="_blank" href="https://github.com/UniversityOfAthens/CodingClub" sx={{color:"#43C5E7"}}>εδώ</Link>
       </Typography>
     </Box>
   );
