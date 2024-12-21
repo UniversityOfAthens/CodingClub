@@ -2,7 +2,12 @@ import { Card, CardContent, CardHeader, Button } from "@mui/material";
 
 export default function Talk({talk})
 {
-    return (<Card>
+    return (<Card
+        sx={{
+            width: "35%",
+            marginY: "1rem"
+        }}
+    >
         <CardHeader
             title={`${talk.speaker}, ${talk.title}`}
             subheader={talk.date}

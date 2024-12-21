@@ -6,7 +6,6 @@ import { useParams } from "react-router";
 import { Helmet } from 'react-helmet';
 import CircularProgress from '@mui/material/CircularProgress';
 
-
 const renderData = {
     gamedev: {title: "Game Development", image: "gd-logo"},
     cp: {title: "Competitive Programming", image: "cp-logo"},
