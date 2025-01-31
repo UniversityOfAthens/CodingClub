@@ -5,8 +5,6 @@
 
 ## Features
 - [ ] cors in backend
-- [ ] improve SEO somehow
-- [ ] make links to subpages work and not redirect you to main page (ex https://codingclub.di.uoa.gr/talks)
 - [ ] add images to talks
 - [ ] sort talks
 
